@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 20px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
+  border: none;
+}
+
+button:hover {
+  border: 1px solid black;
+}
+
+
