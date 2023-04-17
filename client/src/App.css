@@ -16,11 +16,11 @@ button {
   height: 50px;
   width: 100px;
   border-radius: 50px;
-  border: none;
+  border: 1px solid black;
 }
 
 button:hover {
-  border: 1px solid black;
+  border: 1px solid blue;
 }
 
 

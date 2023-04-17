@@ -1,10 +1,18 @@
 import logo from './logo.svg'
 import './App.css'
-import useState from 'react'
+import { useState } from 'react'
 
 function App() {
   
-  // const [timer, setTimer] = useState('')
+  const [timer, setTimer] = useState('')
+  
+  let timeLeft = timer
+
+  const countDown = setInterval(() => {
+    timeLeft -= 1
+    setTimer(timeLeft)
+    // console.log(timeLeft)
+  }, 1000)
   
   return (
     <div className="App">
@@ -15,6 +23,12 @@ function App() {
         <li><button>45 minutes</button></li>
         <li><button>60 minutes</button></li>
       </ul>
+
+      <div>
+        {/* {timer} */}
+      </div>
+
+
     </div>
   );
 }
