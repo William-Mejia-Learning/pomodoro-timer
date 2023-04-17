@@ -25,7 +25,7 @@ function App() {
       </ul>
 
       <div>
-        {/* {timer} */}
+        {timer}
       </div>
 
 
