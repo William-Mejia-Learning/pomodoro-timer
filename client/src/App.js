@@ -1,4 +1,5 @@
 import "./App.css";
+// import "../public/TunePocket-Achievement-Game-Sound-1-Preview.mp3"
 import React, { useState, useRef } from "react";
 
 function App() {
@@ -7,13 +8,13 @@ function App() {
   const [mode, setMode] = useState('work');
   const intervalRef = useRef(null);
 
-
   const countDown = () =>
     intervalRef.current = setInterval(() => {
       setTimer((prevTime) => {
         if (prevTime > 0) {
           return prevTime - 1;
         } else {
+          play()
           if(mode === 'work'){
             handleMode('break')
             setTimer(600)
@@ -24,6 +25,11 @@ function App() {
         }
       });
     }, 1000);
+
+    const play = () => {
+      const audio = new Audio('./mixkit-trumpet-fanfare-2293.wav')
+      audio.play()
+    }
 
     const handleSelected = (time) => {
       setSelected(time)
