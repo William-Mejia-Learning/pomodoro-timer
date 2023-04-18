@@ -23,4 +23,14 @@ button:hover {
   border: 1px solid blue;
 }
 
+.pause:hover {
+  border: 1px solid yellow;
+}
+
+.reset:hover {
+  border: 1px solid red;
+}
+
+
+
 

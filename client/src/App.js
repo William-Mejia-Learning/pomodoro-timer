@@ -16,7 +16,7 @@ function App() {
         } else {
           if(mode === 'work'){
             handleMode('break')
-            setTimer(5)
+            setTimer(600)
           } else {
             handleMode('work')
             setTimer(selected)
@@ -52,16 +52,16 @@ function App() {
     <div className="App">
       <h1>Pomodoro Timer</h1>
       <div>
-        <p>{mode}</p>
+        <h2>{mode.toUpperCase()}</h2>
         <p>{formatTime(timer)}</p>
       </div>
       <ul>
         <li>
           <button
             onClick={() => {
-              handleSelected(7);
-              setTimer(7);
-              handleReset(7)
+              handleSelected(900);
+              setTimer(900);
+              handleReset(900)
             }}
           >
             15 minutes
@@ -101,10 +101,10 @@ function App() {
           </button>
         </li>
         <li>
-          <button onClick={() => clearInterval(intervalRef.current)}>Pause</button>
+          <button className="pause" onClick={() => clearInterval(intervalRef.current)}>Pause</button>
         </li>
         <li>
-          <button onClick={() => handleReset(selected)}>Reset</button>
+          <button className="reset" onClick={() => handleReset(selected)}>Reset</button>
         </li>
         <li>
           <button onClick={() => {
