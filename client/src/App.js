@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 function App() {
   const [timer, setTimer] = useState(1500);
   const [selected, setSelected] = useState(1500);
+  const [mode, setMode] = useState('work');
   const intervalRef = useRef(null);
 
 
@@ -13,7 +14,13 @@ function App() {
         if (prevTime > 0) {
           return prevTime - 1;
         } else {
-          return 0;
+          if(mode === 'work'){
+            handleMode('break')
+            setTimer(5)
+          } else {
+            handleMode('work')
+            setTimer(selected)
+          }
         }
       });
     }, 1000);
@@ -24,6 +31,11 @@ function App() {
 
     const handleReset = (time) => {
       setTimer(time)
+      clearInterval(intervalRef.current)
+    }
+
+    const handleMode = (modes) => {
+      setMode(modes)
       clearInterval(intervalRef.current)
     }
 
@@ -40,15 +52,16 @@ function App() {
     <div className="App">
       <h1>Pomodoro Timer</h1>
       <div>
+        <p>{mode}</p>
         <p>{formatTime(timer)}</p>
       </div>
       <ul>
         <li>
           <button
             onClick={() => {
-              handleSelected(900);
-              setTimer(900);
-              handleReset(900)
+              handleSelected(7);
+              setTimer(7);
+              handleReset(7)
             }}
           >
             15 minutes
@@ -92,6 +105,15 @@ function App() {
         </li>
         <li>
           <button onClick={() => handleReset(selected)}>Reset</button>
+        </li>
+        <li>
+          <button onClick={() => {
+            if(mode === 'work'){
+              handleMode('break')
+            } else {
+              handleMode('work')
+            }
+          }}>Mode</button>
         </li>
       </ul>
     </div>
