@@ -1,11 +1,11 @@
 import "./App.css";
-// import "../public/TunePocket-Achievement-Game-Sound-1-Preview.mp3"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function App() {
   const [timer, setTimer] = useState(1500);
   const [selected, setSelected] = useState(1500);
   const [mode, setMode] = useState('work');
+  const [night, setNight] = useState('dark');
   const intervalRef = useRef(null);
 
   const countDown = () =>
@@ -26,8 +26,16 @@ function App() {
       });
     }, 1000);
 
+    const handleNight = () => {
+      if (night === 'light') {
+        setNight('dark');
+        } else {
+          setNight('light');
+        }
+    }
+
     const play = () => {
-      const audio = new Audio('./mixkit-trumpet-fanfare-2293.wav')
+      const audio = new Audio('./mixkit-arcade-retro-game-over-213.wav')
       audio.play()
     }
 
@@ -45,6 +53,10 @@ function App() {
       clearInterval(intervalRef.current)
     }
 
+    useEffect(() => {
+      document.body.className = night;
+      });
+
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -55,7 +67,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App`}>
       <h1>Pomodoro Timer</h1>
       <div>
         <h2>{mode.toUpperCase()}</h2>
@@ -120,6 +132,13 @@ function App() {
               handleMode('work')
             }
           }}>Mode</button>
+        </li>
+        <li>
+        <button
+        onClick={handleNight}
+      >
+        Toggle Theme
+      </button>
         </li>
       </ul>
     </div>

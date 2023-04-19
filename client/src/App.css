@@ -31,6 +31,16 @@ button:hover {
   border: 1px solid red;
 }
 
+.light {
+  background-color: #CCCCCC;
+  color: black;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
 
 
 
