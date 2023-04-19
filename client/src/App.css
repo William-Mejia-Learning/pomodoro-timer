@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  min-height: 100vh;
+}
+
 ul {
   list-style: none;
   display: flex;
@@ -13,9 +17,9 @@ li {
 }
 
 button {
-  height: 50px;
+  height: 30px;
   width: 100px;
-  border-radius: 50px;
+  border-radius: 10px;
   border: 1px solid black;
 }
 
@@ -37,7 +41,16 @@ button:hover {
 }
 
 .dark {
-  background-color: #121212;
+  background: hsla(205, 46%, 10%, 1);
+
+  background: linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0E1C26", endColorstr="#2A454B", GradientType=1 );
+
   color: white;
 }
 

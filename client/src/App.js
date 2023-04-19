@@ -55,6 +55,7 @@ function App() {
 
     useEffect(() => {
       document.body.className = night;
+      // document.body.style.height = "100vh"
       });
 
 
