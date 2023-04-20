@@ -17,9 +17,11 @@ function App() {
         } else {
           play()
           if (mode === "work") {
+            handleRunning(false)
             handleMode("break")
             setTimer(600)
           } else {
+            handleRunning(false)
             handleMode("work")
             setTimer(selected)
           }
@@ -170,8 +172,10 @@ function App() {
           <button
             onClick={() => {
               if (mode === "work") {
+                handleRunning(false)
                 handleMode("break")
               } else {
+                handleRunning(false)
                 handleMode("work")
               }
             }}
