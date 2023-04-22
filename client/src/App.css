@@ -25,14 +25,20 @@ button {
 
 button:hover {
   border: 1px solid blue;
+  background-color: blue;
+  color: white;
 }
 
 .pause:hover {
   border: 1px solid yellow;
+  background-color: yellow;
+  color: black;
 }
 
 .reset:hover {
   border: 1px solid red;
+  background-color: red;
+  color: white;
 }
 
 .light {
@@ -52,6 +58,10 @@ button:hover {
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0E1C26", endColorstr="#2A454B", GradientType=1 );
 
   color: white;
+}
+
+.timer {
+  font-size: 100px;
 }
 
 

@@ -78,7 +78,7 @@ function App() {
       <h1>Pomodoro Timer</h1>
       <div>
         <h2>{mode.toUpperCase()}</h2>
-        <p>{formatTime(timer)}</p>
+        <p className="timer">{formatTime(timer)}</p>
       </div>
       <ul>
         <li>
