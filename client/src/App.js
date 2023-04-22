@@ -81,6 +81,30 @@ function App() {
         <p className="timer">{formatTime(timer)}</p>
       </div>
       <ul>
+      <li>
+            <button
+              onClick={() => {
+                handleRunning(false)
+                handleSelected(300)
+                setTimer(300)
+                handleReset(300)
+              }}
+            >
+              5 minutes
+            </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              handleRunning(false)
+              handleSelected(600)
+              setTimer(600)
+              handleReset(600)
+            }}
+          >
+            10 minutes
+          </button>
+        </li>
         <li>
           <button
             onClick={() => {
